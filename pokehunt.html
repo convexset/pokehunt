@@ -1437,7 +1437,7 @@ Needless to say, "Don't be evil."
 			title: pokemonData[sighting.pokeId].name
 		});
 		marker.addListener('click', function() {
-			alert(`#${pokemonData[sighting.pokeId].id} ${pokemonData[sighting.pokeId].name}`);
+			alert(`#${pokemonData[sighting.pokeId].id} ${pokemonData[sighting.pokeId].name} seen ${sighting.ts}`);
 		});
 
 		marker.__sighting__ = sighting;
