@@ -1323,10 +1323,8 @@
 		var checkbox = document.createElement("input");
 		checkbox.setAttribute('type', 'checkbox');
 		checkbox.setAttribute('id', `check-${pokemonData[pokeId].id}`);
-		if (Math.random() < 0.2) {
-			checkbox.checked = true;
-			pokemonGridSelection[pokeId] = true;
-		}
+		checkbox.checked = true;
+		pokemonGridSelection[pokeId] = true;
 		$(checkbox).change(function() {
 			console.info(`#${pokemonData[pokeId].id} ${pokemonData[pokeId].name} ${this.checked ? "selected" : "de-selected."}`)
 			pokemonGridSelection[pokeId] = this.checked;
