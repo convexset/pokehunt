@@ -255,18 +255,20 @@
 	}
 
 	function reportPokemonSightingHere(pokeId) {
-		requestLocation(function (position) {
-			if (confirm(`Report a sighting of ${pokemonData[pokeId].name} at your current location?`)) {
+		var doReport = confirm(`Report a sighting of ${pokemonData[pokeId].name} at your current location?\n(Give a few moments for the Geolocation API and the server to get it.)`);
+		if (doReport) {
+			requestLocation(function (position) {
 				console.info("Current Location: Latitude: " + position.coords.latitude + "; Longitude: " + position.coords.longitude);
 				var location = {
 					lat: position.coords.latitude,
 					lng: position.coords.longitude
 				};
 				reportPokemonSighting(pokeId, location);
-			}
-		}, function() {
-			alert("Geolocation must be enabled to report sightings.");
-		});
+				alert('Sighting report sent. Thank you. =)');
+			}, function() {
+				alert("Geolocation must be enabled to report sightings.");
+			});
+		}
 	}
 
 	var lastFireBaseUpdate = {type: null, data: null};
