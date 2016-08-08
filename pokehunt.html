@@ -1003,6 +1003,11 @@
 	var PokeSightingRef = PokeBase('sightings');
 
 	var ALL_POKEMON_IDS = _.range(1, 151+1);
+	var DISALLOWED_POKEMON_IDS = [144, 145, 146, 150, 151];
+	function isAllowedPokeId(pokeId) {
+		return DISALLOWED_POKEMON_IDS.indexOf(pokeId) === -1;
+	}
+	var ALLOWED_POKEMON_IDS = ALL_POKEMON_IDS.filter(isAllowedPokeId);
 	var allPokemonSightings = [];
 	var sightingsByPokeId = _.fromPairs(ALL_POKEMON_IDS.map(function(idx) {
 		return [idx, []];
@@ -1058,7 +1063,9 @@
 
 		// update map
 		addSightingToMap(sighting);
-		$(`#count-${pokemonData[sighting.pokeId].id}`)[0].textContent = ` (${allMapMarkers[sighting.pokeId].length}) `;
+		if (isAllowedPokeId(sighting.pokeId)) {
+			$(`#count-${pokemonData[sighting.pokeId].id}`)[0].textContent = ` (${allMapMarkers[sighting.pokeId].length}) `;
+		}
 
 		// remove if too many sightings of same Pokemon
 		if (sightingsByPokeId[sighting.pokeId].length > SIGHTING_LIMIT) {
@@ -1302,11 +1309,13 @@
 	var pokemonGrid = _.fromPairs(ALL_POKEMON_IDS.map(function (idx) { 
 		return [idx, makeAndAppendNewDivCell()];
 	}));
+
+	var SHOW_LEGENDARIES = Math.random() < 0.1;
 	var pokemonGridSelection = _.fromPairs(ALL_POKEMON_IDS.map(function (idx) {
-		return [idx, false];
+		return [idx, SHOW_LEGENDARIES];
 	}));
 
-	ALL_POKEMON_IDS.forEach(function(pokeId) {
+	ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 		var div = pokemonGrid[pokeId];
 
 		var img = document.createElement("img");
@@ -1360,21 +1369,21 @@
 	});
 
 	$("#select-none").click(function() {
-		ALL_POKEMON_IDS.forEach(function(pokeId) {
+		ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 			$(`#check-${pokemonData[pokeId].id}`).prop('checked', false);
 			$(`#check-${pokemonData[pokeId].id}`).trigger('change');
 		});
 	});
 
 	$("#select-all").click(function() {
-		ALL_POKEMON_IDS.forEach(function(pokeId) {
+		ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 			$(`#check-${pokemonData[pokeId].id}`).prop('checked', true);
 			$(`#check-${pokemonData[pokeId].id}`).trigger('change');
 		});
 	});
 
 	$("#select-random").click(function() {
-		ALL_POKEMON_IDS.forEach(function(pokeId) {
+		ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 			$(`#check-${pokemonData[pokeId].id}`).prop('checked', Math.random() < 0.1);
 			$(`#check-${pokemonData[pokeId].id}`).trigger('change');
 		});
@@ -1437,7 +1446,7 @@ Needless to say, "Don't be evil."
 			title: pokemonData[sighting.pokeId].name
 		});
 		marker.addListener('click', function() {
-			alert(`#${pokemonData[sighting.pokeId].id} ${pokemonData[sighting.pokeId].name} seen ${sighting.ts}`);
+			alert(`#${pokemonData[sighting.pokeId].id} ${pokemonData[sighting.pokeId].name} seen on ${sighting.ts}.` + (!!sighting.notes ? ` (${sighting.notes})` : ""));
 		});
 
 		marker.__sighting__ = sighting;
