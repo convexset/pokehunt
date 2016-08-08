@@ -1,157 +1,918 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PokeHunt</title>
+
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 <style>
-.pokemon-001 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -7px; border: 0px}
-.pokemon-002 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -7px; border: 0px}
-.pokemon-003 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -7px; border: 0px}
-.pokemon-004 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -7px; border: 0px}
-.pokemon-005 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -7px; border: 0px}
-.pokemon-006 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -7px; border: 0px}
-.pokemon-007 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -7px; border: 0px}
-.pokemon-008 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -7px; border: 0px}
-.pokemon-009 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -7px; border: 0px}
-.pokemon-010 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -7px; border: 0px}
-.pokemon-011 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -7px; border: 0px}
-.pokemon-012 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -7px; border: 0px}
-.pokemon-013 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -47px; border: 0px}
-.pokemon-014 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -47px; border: 0px}
-.pokemon-015 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -47px; border: 0px}
-.pokemon-016 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -47px; border: 0px}
-.pokemon-017 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -47px; border: 0px}
-.pokemon-018 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -47px; border: 0px}
-.pokemon-019 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -47px; border: 0px}
-.pokemon-020 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -47px; border: 0px}
-.pokemon-021 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -47px; border: 0px}
-.pokemon-022 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -47px; border: 0px}
-.pokemon-023 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -47px; border: 0px}
-.pokemon-024 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -47px; border: 0px}
-.pokemon-025 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -87px; border: 0px}
-.pokemon-026 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -87px; border: 0px}
-.pokemon-027 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -87px; border: 0px}
-.pokemon-028 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -87px; border: 0px}
-.pokemon-029 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -87px; border: 0px}
-.pokemon-030 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -87px; border: 0px}
-.pokemon-031 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -87px; border: 0px}
-.pokemon-032 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -87px; border: 0px}
-.pokemon-033 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -87px; border: 0px}
-.pokemon-034 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -87px; border: 0px}
-.pokemon-035 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -87px; border: 0px}
-.pokemon-036 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -87px; border: 0px}
-.pokemon-037 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -127px; border: 0px}
-.pokemon-038 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -127px; border: 0px}
-.pokemon-039 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -127px; border: 0px}
-.pokemon-040 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -127px; border: 0px}
-.pokemon-041 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -127px; border: 0px}
-.pokemon-042 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -127px; border: 0px}
-.pokemon-043 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -127px; border: 0px}
-.pokemon-044 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -127px; border: 0px}
-.pokemon-045 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -127px; border: 0px}
-.pokemon-046 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -127px; border: 0px}
-.pokemon-047 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -127px; border: 0px}
-.pokemon-048 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -127px; border: 0px}
-.pokemon-049 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -167px; border: 0px}
-.pokemon-050 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -167px; border: 0px}
-.pokemon-051 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -167px; border: 0px}
-.pokemon-052 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -167px; border: 0px}
-.pokemon-053 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -167px; border: 0px}
-.pokemon-054 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -167px; border: 0px}
-.pokemon-055 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -167px; border: 0px}
-.pokemon-056 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -167px; border: 0px}
-.pokemon-057 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -167px; border: 0px}
-.pokemon-058 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -167px; border: 0px}
-.pokemon-059 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -167px; border: 0px}
-.pokemon-060 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -167px; border: 0px}
-.pokemon-061 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -207px; border: 0px}
-.pokemon-062 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -207px; border: 0px}
-.pokemon-063 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -207px; border: 0px}
-.pokemon-064 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -207px; border: 0px}
-.pokemon-065 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -207px; border: 0px}
-.pokemon-066 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -207px; border: 0px}
-.pokemon-067 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -207px; border: 0px}
-.pokemon-068 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -207px; border: 0px}
-.pokemon-069 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -207px; border: 0px}
-.pokemon-070 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -207px; border: 0px}
-.pokemon-071 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -207px; border: 0px}
-.pokemon-072 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -207px; border: 0px}
-.pokemon-073 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -247px; border: 0px}
-.pokemon-074 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -247px; border: 0px}
-.pokemon-075 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -247px; border: 0px}
-.pokemon-076 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -247px; border: 0px}
-.pokemon-077 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -247px; border: 0px}
-.pokemon-078 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -247px; border: 0px}
-.pokemon-079 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -247px; border: 0px}
-.pokemon-080 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -247px; border: 0px}
-.pokemon-081 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -247px; border: 0px}
-.pokemon-082 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -247px; border: 0px}
-.pokemon-083 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -247px; border: 0px}
-.pokemon-084 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -247px; border: 0px}
-.pokemon-085 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -287px; border: 0px}
-.pokemon-086 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -287px; border: 0px}
-.pokemon-087 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -287px; border: 0px}
-.pokemon-088 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -287px; border: 0px}
-.pokemon-089 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -287px; border: 0px}
-.pokemon-090 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -287px; border: 0px}
-.pokemon-091 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -287px; border: 0px}
-.pokemon-092 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -287px; border: 0px}
-.pokemon-093 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -287px; border: 0px}
-.pokemon-094 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -287px; border: 0px}
-.pokemon-095 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -287px; border: 0px}
-.pokemon-096 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -287px; border: 0px}
-.pokemon-097 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -327px; border: 0px}
-.pokemon-098 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -327px; border: 0px}
-.pokemon-099 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -327px; border: 0px}
-.pokemon-100 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -327px; border: 0px}
-.pokemon-101 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -327px; border: 0px}
-.pokemon-102 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -327px; border: 0px}
-.pokemon-103 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -327px; border: 0px}
-.pokemon-104 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -327px; border: 0px}
-.pokemon-105 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -327px; border: 0px}
-.pokemon-106 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -327px; border: 0px}
-.pokemon-107 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -327px; border: 0px}
-.pokemon-108 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -327px; border: 0px}
-.pokemon-109 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -367px; border: 0px}
-.pokemon-110 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -367px; border: 0px}
-.pokemon-111 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -367px; border: 0px}
-.pokemon-112 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -367px; border: 0px}
-.pokemon-113 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -367px; border: 0px}
-.pokemon-114 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -367px; border: 0px}
-.pokemon-115 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -367px; border: 0px}
-.pokemon-116 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -367px; border: 0px}
-.pokemon-117 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -367px; border: 0px}
-.pokemon-118 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -367px; border: 0px}
-.pokemon-119 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -367px; border: 0px}
-.pokemon-120 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -367px; border: 0px}
-.pokemon-121 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -407px; border: 0px}
-.pokemon-122 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -407px; border: 0px}
-.pokemon-123 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -407px; border: 0px}
-.pokemon-124 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -407px; border: 0px}
-.pokemon-125 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -407px; border: 0px}
-.pokemon-126 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -407px; border: 0px}
-.pokemon-127 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -407px; border: 0px}
-.pokemon-128 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -407px; border: 0px}
-.pokemon-129 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -407px; border: 0px}
-.pokemon-130 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -407px; border: 0px}
-.pokemon-131 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -407px; border: 0px}
-.pokemon-132 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -407px; border: 0px}
-.pokemon-133 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -447px; border: 0px}
-.pokemon-134 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -447px; border: 0px}
-.pokemon-135 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -447px; border: 0px}
-.pokemon-136 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -447px; border: 0px}
-.pokemon-137 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -447px; border: 0px}
-.pokemon-138 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -447px; border: 0px}
-.pokemon-139 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -447px; border: 0px}
-.pokemon-140 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -447px; border: 0px}
-.pokemon-141 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -447px; border: 0px}
-.pokemon-142 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -447px; border: 0px}
-.pokemon-143 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -447px; border: 0px}
-.pokemon-144 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -447px; border: 0px}
-.pokemon-145 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -487px; border: 0px}
-.pokemon-146 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -487px; border: 0px}
-.pokemon-147 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -487px; border: 0px}
-.pokemon-148 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -487px; border: 0px}
-.pokemon-149 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -487px; border: 0px}
-.pokemon-150 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -487px; border: 0px}
-.pokemon-151 { width:32; height: 35; background: url(http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -487px; border: 0px}
+.pokemon-001 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -7px;
+	border: 0px
+}
+.pokemon-002 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -7px;
+	border: 0px
+}
+.pokemon-003 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -7px;
+	border: 0px
+}
+.pokemon-004 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -7px;
+	border: 0px
+}
+.pokemon-005 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -7px;
+	border: 0px
+}
+.pokemon-006 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -7px;
+	border: 0px
+}
+.pokemon-007 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -7px;
+	border: 0px
+}
+.pokemon-008 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -7px;
+	border: 0px
+}
+.pokemon-009 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -7px;
+	border: 0px
+}
+.pokemon-010 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -7px;
+	border: 0px
+}
+.pokemon-011 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -7px;
+	border: 0px
+}
+.pokemon-012 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -7px;
+	border: 0px
+}
+.pokemon-013 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -47px;
+	border: 0px
+}
+.pokemon-014 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -47px;
+	border: 0px
+}
+.pokemon-015 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -47px;
+	border: 0px
+}
+.pokemon-016 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -47px;
+	border: 0px
+}
+.pokemon-017 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -47px;
+	border: 0px
+}
+.pokemon-018 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -47px;
+	border: 0px
+}
+.pokemon-019 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -47px;
+	border: 0px
+}
+.pokemon-020 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -47px;
+	border: 0px
+}
+.pokemon-021 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -47px;
+	border: 0px
+}
+.pokemon-022 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -47px;
+	border: 0px
+}
+.pokemon-023 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -47px;
+	border: 0px
+}
+.pokemon-024 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -47px;
+	border: 0px
+}
+.pokemon-025 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -87px;
+	border: 0px
+}
+.pokemon-026 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -87px;
+	border: 0px
+}
+.pokemon-027 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -87px;
+	border: 0px
+}
+.pokemon-028 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -87px;
+	border: 0px
+}
+.pokemon-029 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -87px;
+	border: 0px
+}
+.pokemon-030 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -87px;
+	border: 0px
+}
+.pokemon-031 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -87px;
+	border: 0px
+}
+.pokemon-032 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -87px;
+	border: 0px
+}
+.pokemon-033 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -87px;
+	border: 0px
+}
+.pokemon-034 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -87px;
+	border: 0px
+}
+.pokemon-035 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -87px;
+	border: 0px
+}
+.pokemon-036 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -87px;
+	border: 0px
+}
+.pokemon-037 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -127px;
+	border: 0px
+}
+.pokemon-038 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -127px;
+	border: 0px
+}
+.pokemon-039 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -127px;
+	border: 0px
+}
+.pokemon-040 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -127px;
+	border: 0px
+}
+.pokemon-041 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -127px;
+	border: 0px
+}
+.pokemon-042 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -127px;
+	border: 0px
+}
+.pokemon-043 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -127px;
+	border: 0px
+}
+.pokemon-044 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -127px;
+	border: 0px
+}
+.pokemon-045 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -127px;
+	border: 0px
+}
+.pokemon-046 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -127px;
+	border: 0px
+}
+.pokemon-047 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -127px;
+	border: 0px
+}
+.pokemon-048 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -127px;
+	border: 0px
+}
+.pokemon-049 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -167px;
+	border: 0px
+}
+.pokemon-050 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -167px;
+	border: 0px
+}
+.pokemon-051 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -167px;
+	border: 0px
+}
+.pokemon-052 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -167px;
+	border: 0px
+}
+.pokemon-053 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -167px;
+	border: 0px
+}
+.pokemon-054 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -167px;
+	border: 0px
+}
+.pokemon-055 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -167px;
+	border: 0px
+}
+.pokemon-056 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -167px;
+	border: 0px
+}
+.pokemon-057 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -167px;
+	border: 0px
+}
+.pokemon-058 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -167px;
+	border: 0px
+}
+.pokemon-059 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -167px;
+	border: 0px
+}
+.pokemon-060 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -167px;
+	border: 0px
+}
+.pokemon-061 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -207px;
+	border: 0px
+}
+.pokemon-062 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -207px;
+	border: 0px
+}
+.pokemon-063 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -207px;
+	border: 0px
+}
+.pokemon-064 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -207px;
+	border: 0px
+}
+.pokemon-065 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -207px;
+	border: 0px
+}
+.pokemon-066 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -207px;
+	border: 0px
+}
+.pokemon-067 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -207px;
+	border: 0px
+}
+.pokemon-068 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -207px;
+	border: 0px
+}
+.pokemon-069 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -207px;
+	border: 0px
+}
+.pokemon-070 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -207px;
+	border: 0px
+}
+.pokemon-071 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -207px;
+	border: 0px
+}
+.pokemon-072 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -207px;
+	border: 0px
+}
+.pokemon-073 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -247px;
+	border: 0px
+}
+.pokemon-074 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -247px;
+	border: 0px
+}
+.pokemon-075 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -247px;
+	border: 0px
+}
+.pokemon-076 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -247px;
+	border: 0px
+}
+.pokemon-077 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -247px;
+	border: 0px
+}
+.pokemon-078 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -247px;
+	border: 0px
+}
+.pokemon-079 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -247px;
+	border: 0px
+}
+.pokemon-080 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -247px;
+	border: 0px
+}
+.pokemon-081 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -247px;
+	border: 0px
+}
+.pokemon-082 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -247px;
+	border: 0px
+}
+.pokemon-083 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -247px;
+	border: 0px
+}
+.pokemon-084 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -247px;
+	border: 0px
+}
+.pokemon-085 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -287px;
+	border: 0px
+}
+.pokemon-086 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -287px;
+	border: 0px
+}
+.pokemon-087 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -287px;
+	border: 0px
+}
+.pokemon-088 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -287px;
+	border: 0px
+}
+.pokemon-089 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -287px;
+	border: 0px
+}
+.pokemon-090 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -287px;
+	border: 0px
+}
+.pokemon-091 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -287px;
+	border: 0px
+}
+.pokemon-092 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -287px;
+	border: 0px
+}
+.pokemon-093 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -287px;
+	border: 0px
+}
+.pokemon-094 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -287px;
+	border: 0px
+}
+.pokemon-095 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -287px;
+	border: 0px
+}
+.pokemon-096 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -287px;
+	border: 0px
+}
+.pokemon-097 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -327px;
+	border: 0px
+}
+.pokemon-098 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -327px;
+	border: 0px
+}
+.pokemon-099 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -327px;
+	border: 0px
+}
+.pokemon-100 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -327px;
+	border: 0px
+}
+.pokemon-101 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -327px;
+	border: 0px
+}
+.pokemon-102 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -327px;
+	border: 0px
+}
+.pokemon-103 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -327px;
+	border: 0px
+}
+.pokemon-104 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -327px;
+	border: 0px
+}
+.pokemon-105 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -327px;
+	border: 0px
+}
+.pokemon-106 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -327px;
+	border: 0px
+}
+.pokemon-107 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -327px;
+	border: 0px
+}
+.pokemon-108 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -327px;
+	border: 0px
+}
+.pokemon-109 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -367px;
+	border: 0px
+}
+.pokemon-110 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -367px;
+	border: 0px
+}
+.pokemon-111 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -367px;
+	border: 0px
+}
+.pokemon-112 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -367px;
+	border: 0px
+}
+.pokemon-113 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -367px;
+	border: 0px
+}
+.pokemon-114 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -367px;
+	border: 0px
+}
+.pokemon-115 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -367px;
+	border: 0px
+}
+.pokemon-116 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -367px;
+	border: 0px
+}
+.pokemon-117 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -367px;
+	border: 0px
+}
+.pokemon-118 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -367px;
+	border: 0px
+}
+.pokemon-119 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -367px;
+	border: 0px
+}
+.pokemon-120 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -367px;
+	border: 0px
+}
+.pokemon-121 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -407px;
+	border: 0px
+}
+.pokemon-122 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -407px;
+	border: 0px
+}
+.pokemon-123 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -407px;
+	border: 0px
+}
+.pokemon-124 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -407px;
+	border: 0px
+}
+.pokemon-125 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -407px;
+	border: 0px
+}
+.pokemon-126 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -407px;
+	border: 0px
+}
+.pokemon-127 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -407px;
+	border: 0px
+}
+.pokemon-128 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -407px;
+	border: 0px
+}
+.pokemon-129 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -407px;
+	border: 0px
+}
+.pokemon-130 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -407px;
+	border: 0px
+}
+.pokemon-131 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -407px;
+	border: 0px
+}
+.pokemon-132 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -407px;
+	border: 0px
+}
+.pokemon-133 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -447px;
+	border: 0px
+}
+.pokemon-134 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -447px;
+	border: 0px
+}
+.pokemon-135 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -447px;
+	border: 0px
+}
+.pokemon-136 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -447px;
+	border: 0px
+}
+.pokemon-137 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -447px;
+	border: 0px
+}
+.pokemon-138 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -447px;
+	border: 0px
+}
+.pokemon-139 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -447px;
+	border: 0px
+}
+.pokemon-140 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -240px -447px;
+	border: 0px
+}
+.pokemon-141 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -272px -447px;
+	border: 0px
+}
+.pokemon-142 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -304px -447px;
+	border: 0px
+}
+.pokemon-143 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -336px -447px;
+	border: 0px
+}
+.pokemon-144 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -368px -447px;
+	border: 0px
+}
+.pokemon-145 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -16px -487px;
+	border: 0px
+}
+.pokemon-146 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -48px -487px;
+	border: 0px
+}
+.pokemon-147 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -80px -487px;
+	border: 0px
+}
+.pokemon-148 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -112px -487px;
+	border: 0px
+}
+.pokemon-149 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -144px -487px;
+	border: 0px
+}
+.pokemon-150 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -176px -487px;
+	border: 0px
+}
+.pokemon-151 {
+	width:32;
+	height: 35;
+	background: url(https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png) -208px -487px;
+	border: 0px
+}
 </style>
 
 <script>
@@ -191,7 +952,7 @@
 </script>
 
 <script>
-	const SPRITE_GRID = "http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png";
+	var SPRITE_GRID = "https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png";
 
 	function validatePokeId(pokeId) {
 		if (typeof pokeId !== "number") {
@@ -217,7 +978,7 @@
 
 <script>
 	console.info("Setting up Firebase...");
-	const PokeApp = firebase.initializeApp({
+	var PokeApp = firebase.initializeApp({
 		apiKey: "AIzaSyBCuRGO-A53jniJCuH1AZ5qah2jby_eJy0",
 		authDomain: "pokehunt-beff6.firebaseapp.com",
 		databaseURL: "https://pokehunt-beff6.firebaseio.com",
@@ -232,15 +993,21 @@
 	firebase.auth().signInAnonymously().catch(function(error) {
 		alert('Failed to connect to PokeHunt Firebase. Please reload.');
 	});
+</script>
 
-	const PokeBase = path => PokeApp.database().ref(path);
+<script>
+	function PokeBase(path) {
+		return PokeApp.database().ref(path);
+	}
 
-	const PokeSightingRef = PokeBase('sightings');
+	var PokeSightingRef = PokeBase('sightings');
 
-	const ALL_POKEMON_IDS = _.range(1, 151+1);
+	var ALL_POKEMON_IDS = _.range(1, 151+1);
 	var allPokemonSightings = [];
-	var sightingsByPokeId = _.fromPairs(ALL_POKEMON_IDS.map(idx => [idx, []]));
-	const SIGHTING_LIMIT = 100;
+	var sightingsByPokeId = _.fromPairs(ALL_POKEMON_IDS.map(function(idx) {
+		return [idx, []];
+	}));
+	var SIGHTING_LIMIT = 100;
 
 	function reportPokemonSighting(pokeId, location) {
 		validatePokeId(pokeId);
@@ -305,23 +1072,37 @@
 			var keysToRemove = [];
 			if (sightingsByPokeId[pokeId].length > SIGHTING_LIMIT) {
 				console.log(`Removing excess records for pokemon #${pokeId}...`);
-				keysToRemove = _.range(sightingsByPokeId[pokeId].length - SIGHTING_LIMIT).map(idx => sightingsByPokeId[pokeId][idx].firebaseKey);
+				keysToRemove = _.range(sightingsByPokeId[pokeId].length - SIGHTING_LIMIT).map(function(idx) {
+					return sightingsByPokeId[pokeId][idx].firebaseKey;
+				});
 			}
 
 			// remove from firebase
-			keysToRemove.forEach(firebaseKey => PokeBase(`sightings/${firebaseKey}`).set(null));
+			keysToRemove.forEach(function(firebaseKey) {
+				PokeBase(`sightings/${firebaseKey}`).set(null)
+			});
 		}, 5000 + 10000 * Math.random());
 	}
 
 	// Remove locally if removed by someone else... no need to touch visualization
 	PokeSightingRef.on('child_removed', function sightingRemovedCallback(data) {
 		var firebaseKey = data.key;
-		allPokemonSightings = allPokemonSightings.filter(sighting => sighting.firebaseKey !== firebaseKey);
+		allPokemonSightings = allPokemonSightings.filter(function(sighting) {
+			return sighting.firebaseKey !== firebaseKey;
+		});
 		ALL_POKEMON_IDS.forEach(function(pokeId) {
-			sightingsByPokeId[pokeId] = sightingsByPokeId[pokeId].filter(sighting => sighting.firebaseKey !== firebaseKey);
-			var markersToRemove = allMapMarkers[pokeId].filter(marker => marker.__sighting__.pokeId === pokeId);
-			allMapMarkers[pokeId] = allMapMarkers[pokeId].filter(marker => marker.__sighting__.pokeId !== pokeId);
-			markersToRemove.forEach(marker => marker.setMap(null));
+			sightingsByPokeId[pokeId] = sightingsByPokeId[pokeId].filter(function(sighting) {
+				return sighting.firebaseKey !== firebaseKey;
+			});
+			var markersToRemove = allMapMarkers[pokeId].filter(function(marker) {
+				return marker.__sighting__.pokeId === pokeId;
+			});
+			allMapMarkers[pokeId] = allMapMarkers[pokeId].filter(function(marker) {
+				return marker.__sighting__.pokeId !== pokeId;
+			});
+			markersToRemove.forEach(function(marker) {
+				return marker.setMap(null);
+			});
 
 			$(`#count-${pokemonData[pokeId].id}`)[0].textContent = ` (${allMapMarkers[pokeId].length}) `;
 		});
@@ -329,13 +1110,10 @@
 
 </script>
 
+</head>
+<body>
 
-<script>
-	// Reactive add (no remove)
-
-</script>
-
-<div id="map"></div>
+<div id="map">[MAP PLACEHOLDER]</div>
 <div class="container">
 	<div class="row"><p></p></div>
 	<div class="row">
@@ -352,9 +1130,12 @@
 	<div id="po" class="row">
 	</div>
 </div>
+	
+
+
 
 <script>
-	const pokemonData = {
+	var pokemonData = {
 		1: {name: 'Bulbasaur', link: 'https://fevgames.net/pokedex/001-bulbasaur/', id: '001', dx: 16, dy: 7},
 		2: {name: 'Ivysaur', link: 'https://fevgames.net/pokedex/002-ivysaur/', id: '002', dx: 48, dy: 7},
 		3: {name: 'Venusaur', link: 'https://fevgames.net/pokedex/003-venusaur/', id: '003', dx: 80, dy: 7},
@@ -518,8 +1299,12 @@
 		$("#po").append(newDiv);
 		return newDiv;
 	}
-	const pokemonGrid = _.fromPairs(ALL_POKEMON_IDS.map(idx => [idx, makeAndAppendNewDivCell()]));;
-	const pokemonGridSelection = _.fromPairs(ALL_POKEMON_IDS.map(idx => [idx, false]));;
+	var pokemonGrid = _.fromPairs(ALL_POKEMON_IDS.map(function (idx) { 
+		return [idx, makeAndAppendNewDivCell()];
+	}));
+	var pokemonGridSelection = _.fromPairs(ALL_POKEMON_IDS.map(function (idx) {
+		return [idx, false];
+	}));
 
 	ALL_POKEMON_IDS.forEach(function(pokeId) {
 		var div = pokemonGrid[pokeId];
@@ -547,9 +1332,13 @@
 			pokemonGridSelection[pokeId] = this.checked;
 
 			if (this.checked) {
-				allMapMarkers[pokeId].forEach(marker => marker.setMap(pokeMap));
+				allMapMarkers[pokeId].forEach(function (marker) {
+					marker.setMap(pokeMap);
+				});
 			} else {
-				allMapMarkers[pokeId].forEach(marker => marker.setMap(null));
+				allMapMarkers[pokeId].forEach(function (marker) {
+					marker.setMap(null);
+				});
 			}
 		});
 
@@ -596,16 +1385,15 @@
 
 <script>
 	// Set-up Google Map
-	const mapDiv = document.getElementById("map");
+	var mapDiv = document.getElementById("map");
 	var here = {
 		lat: 1.332841,
 		lng: 103.894185
 	};
 
 	function initPokeMap() {
-		const iconMap = p => new google.maps.MarkerImage("http://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png", new google.maps.Size(32, 35), new google.maps.Point(p.dx, p.dy), new google.maps.Point(16, 17));
 		_.forEach(pokemonData, function(p) {
-			p.icon = iconMap(p);
+			p.icon = new google.maps.MarkerImage("https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png", new google.maps.Size(32, 35), new google.maps.Point(p.dx, p.dy), new google.maps.Point(16, 17));
 		});
 
 		console.info("Initializing Poke Map...")
@@ -639,7 +1427,9 @@ Needless to say, "Don't be evil."
 		mapDiv.style.height = '60%';
 	}
 
-	const allMapMarkers = _.fromPairs(ALL_POKEMON_IDS.map(idx => [idx, []]));
+	var allMapMarkers = _.fromPairs(ALL_POKEMON_IDS.map(function(idx) {
+		return [idx, []];
+	}));
 
 	function addSightingToMap(sighting) {
 		var marker = new google.maps.Marker({
@@ -665,9 +1455,9 @@ Needless to say, "Don't be evil."
 	async defer></script>
 
 <script>
-	function requestLocation(callback) {
+	function requestLocation(callback, errorCallback) {
 		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(typeof callback === "function" ? callback : function() {}, showGeoLocationError);
+			navigator.geolocation.getCurrentPosition(typeof callback === "function" ? callback : function() {}, typeof errorCallback === "function" ? errorCallback : showGeoLocationError);
 		} else {
 			alert("Geolocation disabled or not supported by this browser; Geolocation must be enabled to report sightings. (Reload if you have denied the location information request.)");
 		}
@@ -704,3 +1494,6 @@ Needless to say, "Don't be evil."
 		snd.play();
 	}
 </script>
+
+</body>
+</html>
