@@ -1,1 +1,1 @@
-To use, visit: [this](https://rawgit.com/convexset/pokehunt/master/pokehunt.html) or [that](https://dl.dropboxusercontent.com/u/1496207/pokehunt.html)
+To use, visit: [this](https://rawgit.com/convexset/pokehunt/master/pokehunt.html) or [the "bleeding edge" not-yet-a-version](https://dl.dropboxusercontent.com/u/1496207/pokehunt.html)

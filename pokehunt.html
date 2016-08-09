@@ -1315,11 +1315,20 @@
 		return [idx, SHOW_LEGENDARIES];
 	}));
 
+	function niceTransparentIcon(pokeId) {
+		return `http://www.pokestadium.com/assets/img/sprites/${pokeId}.png`;
+	}
+
 	ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 		var div = pokemonGrid[pokeId];
 
+		// var img = document.createElement("img");
+		// img.classList.add(`pokemon-${pokemonData[pokeId].id}`);
+
 		var img = document.createElement("img");
-		img.classList.add(`pokemon-${pokemonData[pokeId].id}`);
+		img.src = niceTransparentIcon(pokeId);
+		img.setAttribute("width", 48);
+		img.setAttribute("height", 48);
 
 		var span = document.createElement("span");
 		span.textContent = ' ';
@@ -1399,8 +1408,9 @@
 	};
 
 	function initPokeMap() {
-		_.forEach(pokemonData, function(p) {
+		_.forEach(pokemonData, function(p, pokeId) {
 			p.icon = new google.maps.MarkerImage("https://66.media.tumblr.com/131b24550502459e345d0bc667848068/tumblr_nlcpdiLO7J1unlgoso1_500.png", new google.maps.Size(32, 35), new google.maps.Point(p.dx, p.dy), new google.maps.Point(16, 17));
+			p.iconTransparent = new google.maps.MarkerImage(niceTransparentIcon(pokeId), new google.maps.Size(96, 96), new google.maps.Point(0, 0), new google.maps.Point(24, 24), new google.maps.Size(48, 48));
 		});
 
 		console.info("Initializing Poke Map...")
@@ -1442,7 +1452,8 @@ Needless to say, "Don't be evil."
 		var marker = new google.maps.Marker({
 			position: {lat: sighting.lat, lng: sighting.lng},
 			map: pokeMap,
-			icon: pokemonData[sighting.pokeId].icon,
+			// icon: pokemonData[sighting.pokeId].icon,
+			icon: pokemonData[sighting.pokeId].iconTransparent,
 			title: pokemonData[sighting.pokeId].name
 		});
 		marker.addListener('click', function() {
