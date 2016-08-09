@@ -1128,9 +1128,9 @@
 			<h3>Select Pokemon Sightings to Display</h3>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12">
-			<button id="select-none">Clear All</button>
-			<button id="select-all">Select All</button>
-			<button id="select-random">Randomize</button>
+			<button id="select-none" class="btn-default">Clear All</button>
+			<button id="select-all" class="btn-default">Select All</button>
+			<button id="select-random" class="btn-default">Randomize</button>
 		</div>
 	</div>
 	<div class="row"><p></p></div>
@@ -1322,6 +1322,15 @@
 	ALLOWED_POKEMON_IDS.forEach(function(pokeId) {
 		var div = pokemonGrid[pokeId];
 
+		var table = document.createElement("table")
+		table.setAttribute("border", 0);
+		table.style.width = "100%"
+		var tr = document.createElement("tr")
+		var tdMain = document.createElement("td")
+		tdMain.style["font-size"] = "small";
+		var tdButton = document.createElement("td")
+		tdButton.style.width = "54px"
+
 		// var img = document.createElement("img");
 		// img.classList.add(`pokemon-${pokemonData[pokeId].id}`);
 
@@ -1363,18 +1372,27 @@
 		spanCount.textContent = ' (0) ';
 
 		var button = document.createElement("button");
+		button.classList.add("btn-success");
+		button.classList.add("btn-xs");
 		button.setAttribute('id', `report-${pokemonData[pokeId].id}`);
 		button.textContent = "Report";
 		$(button).click(function() {
 			reportPokemonSightingHere(pokeId);
 		});
 
-		$(div).append(checkbox);
-		$(div).append(img);
-		$(div).append(span);
-		$(div).append(link);
-		$(div).append(spanCount);
-		$(div).append(button);
+		$(tdMain).append(checkbox);
+		$(tdMain).append(img);
+		$(tdMain).append(span);
+		$(tdMain).append(link);
+		$(tdMain).append(spanCount);
+		$(tdButton).append(button);
+
+		$(tr).append(tdMain);
+		$(tr).append(tdButton);
+
+		$(table).append(tr);
+
+		$(div).append(table);
 	});
 
 	$("#select-none").click(function() {
