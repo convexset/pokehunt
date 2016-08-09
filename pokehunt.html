@@ -1345,7 +1345,8 @@
 		var link = document.createElement("a");
 		link.setAttribute('href', pokemonData[pokeId].link);
 		link.setAttribute('target', '_blank');
-		link.textContent = `#${pokemonData[pokeId].id} ${pokemonData[pokeId].name}`;
+		// link.textContent = `#${pokemonData[pokeId].id} ${pokemonData[pokeId].name}`;
+		link.textContent = `${pokemonData[pokeId].name}`;
 
 		var checkbox = document.createElement("input");
 		checkbox.setAttribute('type', 'checkbox');
